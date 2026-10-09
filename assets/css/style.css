@@ -1,0 +1,69 @@
+:root {
+
+    --postUpBckgrnClr: rgb(250, 159, 174);
+    --postBodyBckgrnClr: pink;
+    --bodyBckgrndClr: rgba(243, 183, 193, 0.507);
+
+    --postBodyWidth: 20%;
+    --postBodyHeight: 28vh;
+    --postUpHeight: 15vh;
+    --postUpWidth: 20%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bodyBckgrndClr);
+    overflow-y: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.postContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.postContainer .postUp {
+    background-color: var(--postUpBckgrnClr);
+    width: var(--postUpWidth);
+    height: var(--postUpHeight);
+    border-radius: 0px 0px 1000px 1000px;
+    /* transform: rotateX(106deg); We Use this code in JS!! DONT FORGET*/
+    position: absolute;
+    top: 10rem;
+    z-index: 2;
+}
+
+.postContainer .postBody {
+    width: var(--postBodyWidth);
+    height: var(--postBodyHeight);
+    background-color: var(--postBodyBckgrnClr);
+    position: absolute;
+    top: 10rem;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.postContainer .iconHeart {
+    color: rgb(78, 18, 63);
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 18rem;
+    z-index: 999;
+}
+
+.heart-divHover{
+    transform: rotateX(140deg);
+    transition: transform 10s ease-in-out;
+}
