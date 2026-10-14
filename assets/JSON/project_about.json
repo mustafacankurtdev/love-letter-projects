@@ -5,9 +5,11 @@
         "proje_Adı: love-letter-project"
     ],
     "project_Version": [
-        "version: 1.0"
+        "version: 1.0",
+        "version: 1.1"
     ],
     "project_Date": [
-        "Yayın Yılı: 10.10.2026"
+        "Yayın_Yılı: 10.10.2026",
+        "Yayın_Yılı_1: 14.10.2026"
     ]
 }

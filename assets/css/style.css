@@ -1,13 +1,12 @@
 :root {
-
     --postUpBckgrnClr: rgb(250, 159, 174);
     --postBodyBckgrnClr: pink;
     --bodyBckgrndClr: rgba(243, 183, 193, 0.507);
 
-    --postBodyWidth: 20%;
-    --postBodyHeight: 28vh;
+    --postBodyWidth: 26%;
+    --postBodyHeight: 33vh;
     --postUpHeight: 15vh;
-    --postUpWidth: 20%;
+    --postUpWidth: 26%;
 }
 
 body {
@@ -29,8 +28,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     position: relative;
+
+    animation: MyLove 2s;
 }
 
 .postContainer .postUp {
@@ -41,7 +41,9 @@ body {
     /* transform: rotateX(106deg); We Use this code in JS!! DONT FORGET*/
     position: absolute;
     top: 10rem;
+    bottom: 0;
     z-index: 2;
+    transition: all 2s;
 }
 
 .postContainer .postBody {
@@ -52,7 +54,19 @@ body {
     top: 10rem;
     z-index: 1;
     border-radius: 8px;
+    padding: 15px;
 }
+
+.postContainer .postBody .postDescFront {
+    background-color: var(--postBodyBckgrnClr);
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    top: 8rem;
+    left: 0;
+    z-index: 9999;
+}
+
 
 .postContainer .iconHeart {
     color: rgb(78, 18, 63);
@@ -61,9 +75,80 @@ body {
     position: absolute;
     top: 18rem;
     z-index: 999;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    animation: moveHeart 1s infinite;
 }
 
-.heart-divHover{
+.postContainer .iconHeart:hover {
+    color: aliceblue;
+    transform: scale(1.2);
+}
+
+.postContainer .postBody .post-letter-desc:hover {
+    cursor: pointer;
+}
+
+.postContainer .postBody .post-letter-desc .content {
+    background-color: antiquewhite;
+    border-radius: 75px 75px 0px 0px;
+    padding: 15px;
+    height: 250px;
+}
+
+.postContainer .postBody .post-letter-desc .content p {
+
+    font-family: "Love Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    padding: 26px 18px;
+}
+
+.heart-divHover {
     transform: rotateX(140deg);
     transition: transform 10s ease-in-out;
+}
+
+.heartIconHidden {
+    transition: display 2s ease-in-out;
+    display: none;
+}
+
+
+.postHidden {
+    transition: opacity 1s ease-in;
+    background-color: aqua;
+    /* opacity: 0; */
+}
+
+.ContentLetter {
+    transition: border-radius 2s ease-in, transform 700ms ease-in;
+    border-radius: 25px 25px 0px 0px;
+    transform: translateY(-100px);
+    z-index: 99;
+}
+
+
+@keyframes moveHeart {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes MyLove {
+    0% {
+        transform: rotate(120deg);
+    }
+
+    50% {
+        transform: rotate(-120deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
